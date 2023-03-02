@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useEffect, useRef} from 'react'
+import "./App.css"
 
-function App() {
+const App = () => {
+  const inputElememt = useRef();
+
+  useEffect(() => {
+    inputElememt.current.focus();
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='input-container'>
+      <h1>custom focus to subject</h1>
+      <input type={Text} placeholder = "name" ref={inputElememt}/>
+      <input type = "number" placeholder='Enter number' />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
